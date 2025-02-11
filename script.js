@@ -8,13 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
         sidebar.classList.toggle("active");
     });
 
-    // Chuyển chế độ sáng/tối
-    themeToggle.addEventListener("click", function() {
-        document.body.classList.toggle("light-mode");
-
-        // Đổi biểu tượng nút
-        themeToggle.textContent = document.body.classList.contains("light-mode") ? "🌞" : "🌙";
-    });
     const editor = document.getElementById("editor");
     const buttons = document.querySelectorAll(".toolbar button");
     const markdownOutput = document.getElementById("markdown-output");
