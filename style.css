@@ -30,14 +30,12 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.15); /* Trong suốt nhẹ */
-    padding: 14px 20px;
+    background: transparent;
+    padding: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Nút menu */
@@ -63,43 +61,34 @@ header {
 #sidebar {
     position: fixed;
     top: 0;
-    left: -60%;
-    width: 60%;
+    left: -50%;
+    width: 50%;
     height: 100%;
-    background: var(--bg-gradient-end);
-    padding: 25px;
+    background: var(--button-bg);
+    padding: 20px;
     transition: left 0.3s ease;
     z-index: 999;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Khi menu mở */
-#sidebar.active {
-    left: 0;
-}
-
-/* Danh sách menu */
 #sidebar ul {
     list-style: none;
-    padding: 0;
 }
 
 #sidebar ul li {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 #sidebar ul li a {
     text-decoration: none;
-    color: var(--main-color);
-    font-size: 20px;
-    font-weight: bold;
+    color: var(--text-color);
+    font-size: 18px;
     display: block;
-    padding: 14px;
+    padding: 12px;
     border-radius: 8px;
 }
 
 #sidebar ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--button-hover);
 }
 
 /* Section hiển thị */
