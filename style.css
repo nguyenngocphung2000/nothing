@@ -46,7 +46,7 @@ body.light-mode header {
 header button {
     background: var(--accent-color);
     border: none;
-    padding: 10px;
+    padding: 8px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
@@ -79,7 +79,7 @@ header button:hover {
 #close-menu {
     background: var(--accent-color);
     border: none;
-    padding: 10px;
+    padding: 8px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
