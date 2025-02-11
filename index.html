@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Thanh Header -->
+    <header id="header">
+        <button id="menu-btn">☰</button>
+        <button id="theme-toggle">🌙</button>
+    </header>
+
+    <!-- Menu Trượt -->
+    <nav id="sidebar">
+        <button id="close-menu">✖</button>
+        <ul>
+                        <li><a href="#" onclick="showSection('home')">Trang chủ</a></li>
+            <li><a href="#" onclick="showSection('about')">Giới thiệu</a></li>
+            <li><a href="#" onclick="showSection('services')">Dịch vụ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Nội dung các Section -->
+    <main>
+        <section id="home" class="section active">
+            <h1>Trang Chủ</h1>
+            <p>Chào mừng bạn đến với trang web.</p>
+        </section>
+
+        <section id="about" class="section">
+            <h1>Giới Thiệu</h1>
+            <p>Đây là phần giới thiệu.</p>
+        </section>
+
+        <section id="services" class="section">
+            <h1>Dịch Vụ</h1>
+            <p>Danh sách dịch vụ của chúng tôi.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
