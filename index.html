@@ -27,12 +27,32 @@
     <main>
         <section id="home" class="section active">
             <h1>Trang Chủ</h1>
-            <p>Chào mừng bạn đến với trang web.</p>
+            <p>Chào mừng bạn đến với trang web của Phụng, các thông tin được thu thập từ nhiều nguồn, nhưng yên tâm tôi lấy từ nguồn nào thì sẽ ghi rõ.</p>
         </section>
 
-        <section id="about" class="section">
-            <h1>Giới Thiệu</h1>
-            <p>Đây là phần giới thiệu.</p>
+        <section id="TextToHtml" class="section">
+            <div class="editor-container">
+            <div class="toolbar">
+                <button data-command="bold"><b>B</b></button>
+                <button data-command="italic"><i>I</i></button>
+                <button data-command="formatBlock" data-value="<h1>">H1</button>
+                <button data-command="formatBlock" data-value="<h2>">H2</button>
+                <button data-command="formatBlock" data-value="<h3>">H3</button>
+                <button data-command="insertUnorderedList">•</button>
+                <button data-command="insertOrderedList">1.</button>
+                <button data-command="createLink">🔗</button>
+            </div>
+            <div id="editor" contenteditable="true"></div>
+        </div>
+
+        <!-- Hộp hiển thị Markdown -->
+        <div class="markdown-container">
+            <div class="markdown-toolbar">
+                <button id="copyBtn">📋</button>
+                <button id="downloadBtn">⬇️</button>
+            </div>
+            <textarea id="markdown-output" readonly></textarea>
+        </div>
         </section>
 
         <section id="services" class="section">
