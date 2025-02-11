@@ -1,10 +1,12 @@
 /* Định nghĩa màu sắc */
 :root {
-    --bg-color: #FEFFFF;        /* Nền chính */
-    --main-color: #3AAFA9;      /* Màu chủ đạo */
-    --accent-color: #2B7A78;    /* Màu nhấn */
-    --text-color: #17252A;      /* Màu chữ */
-    --border-color: #C8D8E4;    /* Viền mềm mại */
+    --bg-gradient-start: #0066FF;  /* Màu xanh gradient */
+    --bg-gradient-end: #0044CC;    /* Màu xanh đậm */
+    --main-color: #FFFFFF;         /* Màu chữ chính */
+    --box-bg: #FFFFFF;             /* Màu nền hộp */
+    --box-border: #007BFF;         /* Viền xanh */
+    --icon-bg: #0066FF;            /* Màu nền icon */
+    --icon-hover: #0044CC;         /* Màu hover icon */
 }
 
 /* Reset CSS */
@@ -15,10 +17,10 @@
     font-family: "Arial", sans-serif;
 }
 
-/* Nền và màu chữ */
+/* Background gradient */
 body {
-    background: var(--bg-color);
-    color: var(--text-color);
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--main-color);
     transition: background 0.3s, color 0.3s;
 }
 
@@ -28,40 +30,44 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.8); /* Trong suốt nhẹ */
-    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.15); /* Trong suốt nhẹ */
+    padding: 14px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Nút menu */
 #menu-btn {
-    background: var(--accent-color);
+    background: var(--icon-bg);
     border: none;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 12px;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 18px;
-    color: var(--bg-color);
+    font-size: 20px;
+    color: var(--main-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #menu-btn:hover {
-    background: var(--main-color);
+    background: var(--icon-hover);
 }
 
 /* Menu bên trái */
 #sidebar {
     position: fixed;
     top: 0;
-    left: -50%;
-    width: 50%;
+    left: -60%;
+    width: 60%;
     height: 100%;
-    background: var(--main-color);
-    padding: 20px;
+    background: var(--bg-gradient-end);
+    padding: 25px;
     transition: left 0.3s ease;
     z-index: 999;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
@@ -79,20 +85,21 @@ header {
 }
 
 #sidebar ul li {
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
 #sidebar ul li a {
     text-decoration: none;
-    color: var(--bg-color);
-    font-size: 18px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: bold;
     display: block;
-    padding: 12px;
+    padding: 14px;
     border-radius: 8px;
 }
 
 #sidebar ul li a:hover {
-    background: var(--accent-color);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Section hiển thị */
@@ -105,6 +112,81 @@ header {
 /* Hiển thị section khi active */
 .section.active {
     display: block;
+}
+
+/* Nội dung hộp */
+.box {
+    background: var(--box-bg);
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid var(--box-border);
+    max-width: 90%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+/* Tiêu đề hộp */
+.box h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Định dạng văn bản */
+.box p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Liên kết */
+.box a {
+    color: #007BFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.box a:hover {
+    text-decoration: underline;
+}
+
+/* Biểu tượng trên cùng */
+.top-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Nút chuyển chế độ tối/sáng */
+#toggle-mode {
+    background: var(--icon-bg);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--main-color);
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+#toggle-mode:hover {
+    background: var(--icon-hover);
+}
+
+/* Điều chỉnh trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .box {
+        max-width: 95%;
+    }
+    
+    #sidebar {
+        width: 70%;
+        left: -70%;
+    }
 }
 
 /* PHẦN TEXT TO HTML*/
@@ -203,15 +285,3 @@ header {
     height: auto;
     min-height: 280px;
 }
-
-/* Điều chỉnh căn giữa trên màn hình nhỏ */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-        padding: 15px;
-    }
-
-    .toolbar button {
-        width: 36px;
-        height: 36px;
-    }
