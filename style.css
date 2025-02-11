@@ -23,18 +23,23 @@ body {
 }
 
 /* Header cố định */
+/* Header trong suốt */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(43, 122, 120, 0.8); /* Màu chính với độ mờ */
+    background: transparent; /* Làm nền trong suốt */
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(10px);
     z-index: 1000;
+}
+
+/* Bỏ hiệu ứng mờ và màu nền */
+body.light-mode header {
+    background: transparent;
 }
 
 /* Nút menu & chế độ sáng/tối */
